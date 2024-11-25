@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
@@ -43,3 +44,6 @@ Create a .env file in the root directory of your project (if it doesn't already 
 NEXT_PUBLIC_API_TOKEN='<your-api-token>'
 
 Replace <your-api-token> with the actual API token.
+
+# next-project
+28a721844edfd0edf4fdc46043eacabb9c5e51b0
