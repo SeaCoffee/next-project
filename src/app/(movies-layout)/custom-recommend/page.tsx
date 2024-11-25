@@ -1,6 +1,8 @@
+import Link from "next/link";
+
 import {customRecommendListService} from "@/app/services/APIServices/APIServices";
 import RecommendListComponent from "@/app/components/RecommendListComponent/RecommendListComponent";
-import Link from "next/link";
+
 import styles from './RecommendList.module.css';
 
 const CustomRecommendListPage = async (): Promise<JSX.Element> => {

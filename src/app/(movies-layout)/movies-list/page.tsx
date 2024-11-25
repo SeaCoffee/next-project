@@ -1,14 +1,13 @@
 import React from 'react';
+import Link from "next/link";
+
 import {movieService} from "@/app/services/APIServices/APIServices";
 import MoviesListComponent from "@/app/components/MoviesListComponent/MoviesListComponent";
-import Link from "next/link";
+
 import styles from './movies-list.module.css';
 
 
 
-interface MoviesListProps {
-    currentPage: number;
-}
 const MoviesList = async ({ currentPage }: MoviesListProps): Promise<JSX.Element> => {
     try {
         const allMovies = await movieService.getAllMovies(currentPage);

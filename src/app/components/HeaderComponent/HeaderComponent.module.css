@@ -1,26 +1,26 @@
 .headerContainer {
     display: flex;
-    justify-content: space-between; /* Элементы по краям */
-    align-items: center; /* Выравнивание по вертикали */
+    justify-content: space-between;
+    align-items: center;
     padding: 10px 20px;
-    background-color: #f8f9fa; /* Цвет фона */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Тень */
-    border-radius: 10px; /* Закругленные углы */
-    margin-bottom: 20px; /* Отступ снизу */
+    background-color: #f8f9fa;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    margin-bottom: 20px;
     width: 100%;
-    box-sizing: border-box; /* Учет отступов в ширине */
+    box-sizing: border-box;
 }
 
 .menuContainer {
     display: flex;
-    justify-content: space-evenly; /* Равномерное распределение пунктов меню */
+    justify-content: space-evenly;
     align-items: center;
-    width: 100%; /* Контейнер меню занимает всю ширину */
-    max-width: 100%; /* Убираем возможные ограничения */
-    flex-grow: 1; /* Меню растягивается */
+    width: 100%;
+    max-width: 100%;
+    flex-grow: 1;
 }
 
 .userContainer {
-    flex-shrink: 0; /* Устанавливаем фиксированный размер для пользователя */
-    margin-left: 20px; /* Отступ от меню */
+    flex-shrink: 0;
+    margin-left: 20px;
 }

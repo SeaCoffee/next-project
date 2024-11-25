@@ -1,6 +1,8 @@
 
 const token = process.env.NEXT_PUBLIC_API_TOKEN;
 
+// please put NEXT_PUBLIC_API_TOKEN='<your-api-token>' in .env
+
 if (!token) {
     throw new Error("API token is not defined");
 }

@@ -2,13 +2,13 @@
     display: flex;
     align-items: center;
     gap: 15px;
-    padding: 15px; /* Совпадает с padding у menuContainer */
+    padding: 15px;
     background-color: #f4f4f4;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     width: fit-content;
-    margin-bottom: 20px; /* Совпадает с margin-bottom у menuContainer */
-    height: 70px; /* Устанавливаем высоту, совпадающую с menuContainer */
+    margin-bottom: 20px;
+    height: 70px;
 }
 
 .avatar {

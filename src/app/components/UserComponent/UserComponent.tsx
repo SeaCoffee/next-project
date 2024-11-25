@@ -3,7 +3,7 @@ import styles from './UserComponent.module.css'
 
 const UserComponent: React.FC = () => {
     const userData = {
-        name: 'Jane Smith',
+        name: 'Joe Abercrombie',
         avatarColor: '#4CAF50',
     };
 

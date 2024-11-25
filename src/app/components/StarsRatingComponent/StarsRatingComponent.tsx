@@ -1,14 +1,15 @@
 import React from 'react';
+
 import { Tooltip } from '@nextui-org/react';
 
 const StarsRatingComponent: React.FC<{ rating: number; maxStars?: number }> = ({
                                                                                    rating,
                                                                                    maxStars = 5,
                                                                                }) => {
-    console.log('Rating received:', rating); // Проверяем, какое значение передается
+    console.log('Rating received:', rating);
 
-    const filledStars = Math.round(rating); // Количество заполненных звезд
-    const emptyStars = maxStars - filledStars; // Количество пустых звезд
+    const filledStars = Math.round(rating);
+    const emptyStars = maxStars - filledStars;
 
     const StarFilled = () => (
         <svg
@@ -36,7 +37,6 @@ const StarsRatingComponent: React.FC<{ rating: number; maxStars?: number }> = ({
 
     return (
         <div style={{ display: 'flex', alignItems: 'center', gap: '5px' }}>
-            {/* Заполненные звезды */}
             {[...Array(filledStars)].map((_, i) => (
                 <Tooltip key={`filled-${i}`} content={`Rating: ${rating}`}>
                     <StarFilled />

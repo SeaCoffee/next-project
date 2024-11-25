@@ -56,38 +56,8 @@ interface ICustomMovie {
 }
 
 
-interface MoviesListProps {
-    params: { page?: string };
-    currentPage: number;
-}
-
-
-interface MoviesListCardPageProps {
-    params: { id: string | number };
-}
 
 
 
-interface MoviesByGenrePageProps {
-    params: { id: string; page?: string };
-}
 
-interface SearchComponentProps {
-    query: string;
-    page?: number;
-}
-
-interface SearchFormInputs {
-    query: string;
-}
-
-
-interface SearchResultsProps {
-    movies: IMovie[];
-}
-
-
-interface MoviesListProps {
-    params: { page: string };
-}
 

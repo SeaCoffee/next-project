@@ -7,7 +7,6 @@ export const movieService = {
 
         getAllMovies: async (page: number = 1): Promise<IMovieResponse> => {
             const url = urlBuilder.allMoviesUrl(page);
-            console.log('Fetching movies from:', url);
 
             const response = await customFetchInterceptor<IMovieResponse>(url);
             return response;
@@ -33,7 +32,6 @@ export const genreService = {
         const genres = await customFetchInterceptor<IGenreResponse>(
             urlBuilder.genresUrl()
         );
-        console.log(genres);
         return genres;
     },
     getMoviesByGenre: async (
@@ -43,7 +41,6 @@ export const genreService = {
         const movies = await customFetchInterceptor<IMovieResponse>(
             urlBuilder.moviesByGenreUrl(genreId, page)
         );
-        console.log(movies);
         return movies;
     },
 };
@@ -57,20 +54,17 @@ export const searchMovieService = {
         const response = await customFetchInterceptor<IMovieResponse>(
             urlBuilder.searchMoviesUrl(query, page)
         );
-        console.log(response);
         return response;
     },
 };
 
 
 export const customRecommendListService = {
-    // Получить список рекомендованных сериалов
     getCustomList: async (page: number = 1): Promise<ICustomListResponse> => {
         try {
             const customList = await customFetchInterceptor<ICustomListResponse>(
                 urlBuilder.customRecommendListUrl(page)
             );
-            console.log('Custom Recommend List:', customList);
             return customList;
         } catch (error) {
             console.error('Error fetching custom recommend list:', error);

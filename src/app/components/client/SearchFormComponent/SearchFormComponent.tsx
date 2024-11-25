@@ -4,16 +4,10 @@
 import { useForm } from 'react-hook-form';
 import {useState, useEffect} from "react";
 import Link from "next/link";
+
 import SearchComponent from "@/app/components/SearchComponent/SearchComponent";
 
-
 import styles from './SearchMoviesForm.module.css';
-
-
-interface SearchMoviesFormProps {
-    initialQuery?: string;
-    initialPage?: number;
-}
 
 
 const SearchMoviesForm: React.FC<SearchMoviesFormProps> = ({ initialQuery = "", initialPage = 1 }) => {
@@ -72,7 +66,6 @@ const SearchMoviesForm: React.FC<SearchMoviesFormProps> = ({ initialQuery = "", 
 
     return (
         <div className={styles.searchContainer}>
-            {/* Форма поиска */}
             <form onSubmit={handleSubmit(onSubmit)} className={styles.searchForm}>
                 <input
                     type="text"
@@ -85,7 +78,6 @@ const SearchMoviesForm: React.FC<SearchMoviesFormProps> = ({ initialQuery = "", 
                 </button>
             </form>
 
-            {/* Результаты поиска */}
             {movies && (
                 <div className={styles.resultsContainer}>
                     {movies.results.map((movie) => (

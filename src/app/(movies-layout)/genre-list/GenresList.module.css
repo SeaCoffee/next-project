@@ -12,9 +12,9 @@
 }
 .gridContainer {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Сетка с минимальной шириной карточки */
-    gap: 20px; /* Расстояние между карточками */
-    justify-content: center; /* Центрируем сетку */
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    justify-content: center;
 }
 
 

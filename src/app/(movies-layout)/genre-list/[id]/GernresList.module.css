@@ -8,6 +8,17 @@
     max-width: 1200px;
 }
 
+.movieCard {
+    width: 100%; /* Адаптивность */
+    max-width: 300px; /* Максимальная ширина */
+    padding: 15px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
 .title {
     text-align: center;
     margin-bottom: 20px;
