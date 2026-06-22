@@ -1,17 +1,24 @@
-import React from 'react';
-import type { Metadata } from "next";
+import type { Metadata } from 'next';
+import type { ReactNode } from 'react';
+
+import styles from './movies-layout.module.css';
 
 export const metadata: Metadata = {
-    title: 'Movies App',
-    description: 'Explore movies and genres in this application.',
+  title: {
+    default: 'Movies App',
+    template: '%s | Movies App',
+  },
+  description: 'Explore movies, genres, search results and recommendations.',
 };
 
-const Layout = ({ children }: { children: React.ReactNode }) => {
-    return (
-        <div>
-            {children}
-        </div>
-    );
+type MoviesLayoutProps = {
+  children: ReactNode;
 };
 
-export default Layout;
+export default function MoviesLayout({ children }: MoviesLayoutProps) {
+  return (
+    <div className={styles.layout}>
+      {children}
+    </div>
+  );
+}

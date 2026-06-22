@@ -46,4 +46,4 @@ NEXT_PUBLIC_API_TOKEN='<your-api-token>'
 Replace <your-api-token> with the actual API token.
 
 # next-project
-28a721844edfd0edf4fdc46043eacabb9c5e51b0
+

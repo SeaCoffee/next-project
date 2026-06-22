@@ -1,20 +1,19 @@
 import Link from 'next/link';
+
 import styles from './GenresList.module.css';
 
-const MoviesGenreListComponent: React.FC<{ genre: IGenre }> = ({ genre }) => {
-    return (
-        <div className={styles.genreCard}>
-            <Link
-                href={{
-                    pathname: `/genre-list/${genre.id}/page/1`,
-                }}
-                className={styles.genreLink}
-            >
-                {genre.name}
-            </Link>
-        </div>
-    );
+type Props = {
+  genre: IGenre;
 };
 
-export default MoviesGenreListComponent;
-
+export default function MoviesGenreListComponent({ genre }: Props) {
+  return (
+    <Link
+      href={`/genre-list/${genre.id}?page=1`}
+      className={styles.genreCard}
+    >
+      <span className={styles.genreName}>{genre.name}</span>
+      <span className={styles.genreArrow}>→</span>
+    </Link>
+  );
+}

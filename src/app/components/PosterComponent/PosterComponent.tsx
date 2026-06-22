@@ -1,23 +1,30 @@
-import {imageService} from "@/app/services/APIServices/APIServices";
+import { imageUrlBuilder } from '@/app/urls/urls';
+
 import styles from './PosterComponent.module.css';
 
-interface PosterProps {
-    url?: string | null;
-    alt: string;
-}
-
-const PosterComponent: React.FC<PosterProps> = ({ url, alt }) => {
-    const posterUrl = url ? imageService.getPosterUrl(url) : '/media/default-image.jpg';
-
-    return (
-        <img
-            src={posterUrl}
-            alt={alt}
-            className={styles.image}
-        />
-    );
+type PosterProps = {
+  url?: string | null;
+  alt: string;
+  size?: string;
+  className?: string;
+  priority?: boolean;
 };
 
+export default function PosterComponent({
+  url,
+  alt,
+  size = 'w500',
+  className = '',
+  priority = false,
+}: PosterProps) {
+  const posterUrl = imageUrlBuilder.posterUrl(url, size);
 
-export default PosterComponent;
-
+  return (
+    <img
+      src={posterUrl}
+      alt={alt}
+      className={`${styles.image} ${className}`}
+      loading={priority ? 'eager' : 'lazy'}
+    />
+  );
+}

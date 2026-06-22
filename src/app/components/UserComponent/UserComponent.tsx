@@ -1,21 +1,30 @@
-import React from 'react';
-import styles from './UserComponent.module.css'
+import styles from './UserComponent.module.css';
 
-const UserComponent: React.FC = () => {
-    const userData = {
-        name: 'Joe Abercrombie',
-        avatarColor: '#4CAF50',
-    };
-
-    return (
-        <div className={styles.userContainer}>
-            <div
-                className={styles.avatar}
-                style={{ backgroundColor: userData.avatarColor }}
-            ></div>
-            <h2 className={styles.userName}>{userData.name}</h2>
-        </div>
-    );
+const userData = {
+  name: 'Joe Smith',
 };
 
-export default UserComponent;
+const getInitials = (name: string): string => {
+  return name
+    .split(' ')
+    .filter(Boolean)
+    .slice(0, 2)
+    .map((part) => part[0])
+    .join('')
+    .toUpperCase();
+};
+
+export default function UserComponent() {
+  return (
+    <div className={styles.userContainer}>
+      <div className={styles.avatar} aria-hidden="true">
+        {getInitials(userData.name)}
+      </div>
+
+      <div className={styles.userInfo}>
+        <p className={styles.label}>Signed in as</p>
+        <p className={styles.userName}>{userData.name}</p>
+      </div>
+    </div>
+  );
+}

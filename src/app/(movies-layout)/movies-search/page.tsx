@@ -1,15 +1,38 @@
-import SearchMoviesForm from "@/app/components/client/SearchFormComponent/SearchFormComponent";
+import SearchMoviesForm from '@/app/components/client/SearchFormComponent/SearchFormComponent';
+import { searchMovieService } from '@/app/services/APIServices/APIServices';
 
-const SearchPage = ({ searchParams }: { searchParams: { query?: string; page?: string } }) => {
-    const query = searchParams.query || "";
-    const currentPage = parseInt(searchParams.page || "1", 10);
-
-    return (
-        <div>
-            <h1>Search Movies</h1>
-            <SearchMoviesForm initialQuery={query} initialPage={currentPage} />
-        </div>
-    );
+type SearchPageProps = {
+  searchParams?: Promise<{
+    query?: string;
+    page?: string;
+  }>;
 };
 
-export default SearchPage;
+const getValidPage = (value?: string): number => {
+  const page = Number(value);
+
+  if (!Number.isFinite(page) || page < 1) {
+    return 1;
+  }
+
+  return Math.floor(page);
+};
+
+export default async function SearchPage({ searchParams }: SearchPageProps) {
+  const resolvedSearchParams = await searchParams;
+
+  const query = resolvedSearchParams?.query?.trim() ?? '';
+  const currentPage = getValidPage(resolvedSearchParams?.page);
+
+  const movies = query
+    ? await searchMovieService.searchMovies(query, currentPage)
+    : null;
+
+  return (
+    <SearchMoviesForm
+      initialQuery={query}
+      initialPage={currentPage}
+      movies={movies}
+    />
+  );
+}

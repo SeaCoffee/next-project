@@ -1,25 +1,47 @@
-import React from 'react';
+'use client';
+
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+
 import styles from './MenuComponent.module.css';
 
-const MenuComponent = () => {
-    return (
-        <nav className={styles.menuContainer}>
-            <Link href={'/movies-search'} className={styles.menuLink}>
-                Search Movies
-            </Link>
-            <Link href={'/genre-list'} className={styles.menuLink}>
-                Movies by Genres
-            </Link>
-            <Link href={'/movies-home'} className={styles.menuLink}>
-                Movie List
-            </Link>
-            <Link href={'/custom-recommend'} className={styles.menuLink}>
-                Recommended Movies
-            </Link>
-        </nav>
-    );
-};
+const menuItems = [
+  {
+    href: '/movies-search',
+    label: 'Search',
+  },
+  {
+    href: '/genre-list',
+    label: 'Genres',
+  },
+  {
+    href: '/movies-home',
+    label: 'Movies',
+  },
+  {
+    href: '/custom-recommend',
+    label: 'Recommended',
+  },
+];
 
-export default MenuComponent;
+export default function MenuComponent() {
+  const pathname = usePathname();
 
+  return (
+    <nav className={styles.menu} aria-label="Main navigation">
+      {menuItems.map((item) => {
+        const isActive = pathname === item.href || pathname.startsWith(`${item.href}/`);
+
+        return (
+          <Link
+            key={item.href}
+            href={item.href}
+            className={`${styles.menuLink} ${isActive ? styles.activeLink : ''}`}
+          >
+            {item.label}
+          </Link>
+        );
+      })}
+    </nav>
+  );
+}

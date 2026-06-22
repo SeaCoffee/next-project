@@ -1,0 +1,36 @@
+.rating {
+  display: inline-flex;
+  width: fit-content;
+  align-items: center;
+  gap: 8px;
+}
+
+.stars {
+  display: inline-flex;
+  gap: 2px;
+  line-height: 1;
+}
+
+.starFilled,
+.starEmpty {
+  font-size: 0.95rem;
+}
+
+.starFilled {
+  color: #f5c86a;
+}
+
+.starEmpty {
+  color: rgba(247, 241, 232, 0.22);
+}
+
+.value {
+  color: rgba(247, 241, 232, 0.68);
+  font-size: 0.84rem;
+  font-weight: 800;
+}
+
+.noRating {
+  color: rgba(247, 241, 232, 0.52);
+  font-size: 0.86rem;
+}

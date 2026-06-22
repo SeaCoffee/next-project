@@ -1,7 +1,29 @@
-.recommendContainer {
+.listContainer {
   width: min(1180px, calc(100% - 32px));
   margin: 0 auto;
-  padding: 36px 0 64px;
+  padding: 32px 0 64px;
+}
+
+.backLink {
+  display: inline-flex;
+  width: fit-content;
+  min-height: 40px;
+  align-items: center;
+  margin-bottom: 18px;
+  padding: 0 14px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.055);
+  color: rgba(247, 241, 232, 0.82);
+  font-size: 0.9rem;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.backLink:hover {
+  border-color: rgba(245, 200, 106, 0.32);
+  background: rgba(245, 200, 106, 0.1);
+  color: #f5c86a;
 }
 
 .hero {
@@ -53,7 +75,7 @@
   color: #ffffff;
 }
 
-.gridContainer {
+.grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
   gap: 18px;
@@ -67,7 +89,7 @@
   margin-top: 30px;
 }
 
-.paginationButton,
+.button,
 .disabledButton,
 .currentPage {
   display: inline-flex;
@@ -82,13 +104,13 @@
   text-decoration: none;
 }
 
-.paginationButton {
+.button {
   border: 1px solid rgba(245, 200, 106, 0.38);
   background: rgba(245, 200, 106, 0.12);
   color: #f5c86a;
 }
 
-.paginationButton:hover {
+.button:hover {
   background: rgba(245, 200, 106, 0.18);
 }
 
@@ -122,12 +144,12 @@
 }
 
 @media (max-width: 640px) {
-  .recommendContainer {
+  .listContainer {
     width: min(100% - 24px, 1180px);
-    padding-top: 28px;
+    padding-top: 24px;
   }
 
-  .gridContainer {
+  .grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 12px;
   }

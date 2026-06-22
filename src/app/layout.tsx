@@ -1,38 +1,31 @@
-import type { Metadata } from "next";
-import localFont from "next/font/local";
-import "./globals.css";
-import HeaderComponent from "@/app/components/HeaderComponent/HeaderComponent";
+import type { Metadata } from 'next';
+import type { ReactNode } from 'react';
 
+import HeaderComponent from '@/app/components/HeaderComponent/HeaderComponent';
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
-});
+import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'Movies Platform',
-  description: 'A platform for exploring movies and entertainment.',
+  title: {
+    default: 'Movies Platform',
+    template: '%s | Movies Platform',
+  },
+  description: 'A movie discovery platform with search, genres, ratings and recommendations.',
 };
 
+type RootLayoutProps = {
+  children: ReactNode;
+};
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
-
+      <body>
         <HeaderComponent />
 
-        {children}
+        <main>
+          {children}
+        </main>
       </body>
     </html>
   );

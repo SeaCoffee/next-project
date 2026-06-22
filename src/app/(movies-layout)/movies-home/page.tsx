@@ -1,9 +1,5 @@
-import React from 'react';
-import MoviesList from "@/app/(movies-layout)/movies-list/page";
+import { redirect } from 'next/navigation';
 
-const MoviesListHomePage = async ({ params }: { params?: { page?: string } }): Promise<JSX.Element> => {
-    const currentPage = Number(params?.page) || 1;
-    return <MoviesList currentPage={currentPage} />;
-};
-
-export default MoviesListHomePage;
+export default function MoviesHomePage() {
+  redirect('/movies-list');
+}

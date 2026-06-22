@@ -1,33 +1,63 @@
 .userContainer {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    padding: 15px;
-    background-color: #f4f4f4;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: fit-content;
-    margin-bottom: 20px;
-    height: 70px;
+  display: inline-flex;
+  max-width: 260px;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 10px 6px 6px;
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.055);
 }
 
 .avatar {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: white;
-    text-transform: uppercase;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  display: inline-flex;
+  width: 38px;
+  height: 38px;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #6ad7f5, #7d6af5);
+  color: #ffffff;
+  font-size: 0.82rem;
+  font-weight: 950;
+  letter-spacing: -0.02em;
+  box-shadow: 0 12px 26px rgba(106, 215, 245, 0.2);
+}
+
+.userInfo {
+  display: grid;
+  min-width: 0;
+  gap: 1px;
+}
+
+.label {
+  margin: 0;
+  color: rgba(247, 241, 232, 0.44);
+  font-size: 0.68rem;
+  font-weight: 800;
+  line-height: 1.1;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
 }
 
 .userName {
-    font-size: 1.2rem;
-    font-weight: bold;
-    color: #333;
-    margin: 0;
+  overflow: hidden;
+  margin: 0;
+  color: #ffffff;
+  font-size: 0.86rem;
+  font-weight: 900;
+  line-height: 1.2;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@media (max-width: 640px) {
+  .userInfo {
+    display: none;
+  }
+
+  .userContainer {
+    padding: 5px;
+  }
 }

@@ -1,0 +1,7 @@
+.layout {
+  min-height: calc(100vh - 72px);
+  background:
+    radial-gradient(circle at top left, rgba(245, 200, 106, 0.16), transparent 34%),
+    radial-gradient(circle at top right, rgba(125, 106, 245, 0.12), transparent 30%),
+    linear-gradient(180deg, #090c16 0%, #111421 48%, #090c16 100%);
+}

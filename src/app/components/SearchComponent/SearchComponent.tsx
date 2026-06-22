@@ -1,14 +1,21 @@
-import {searchMovieService} from "@/app/services/APIServices/APIServices";
+import { searchMovieService } from '@/app/services/APIServices/APIServices';
 
+type SearchMoviesParams = {
+  query: string;
+  page?: number;
+};
 
-const SearchComponent = async ({ query, page = 1 }: SearchComponentProps): Promise<IMovieResponse> => {
-    try {
-        const movies = await searchMovieService.searchMovies(query, page);
-        return movies;
-    } catch (error) {
-        console.error('Error during server-side movie search:', error);
-        throw new Error('Failed to fetch movies');
-    }
+const SearchComponent = async ({
+  query,
+  page = 1,
+}: SearchMoviesParams): Promise<IMovieResponse> => {
+  const normalizedQuery = query.trim();
+
+  if (!normalizedQuery) {
+    throw new Error('Search query is required.');
+  }
+
+  return searchMovieService.searchMovies(normalizedQuery, page);
 };
 
 export default SearchComponent;

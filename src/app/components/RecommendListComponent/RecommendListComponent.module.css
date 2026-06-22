@@ -1,45 +1,99 @@
 .card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-    background-color: #fff;
-    padding: 15px;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 24px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.035)),
+    rgba(18, 22, 37, 0.9);
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.24);
+  transition:
+    transform 180ms ease,
+    border-color 180ms ease,
+    box-shadow 180ms ease;
 }
 
 .card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  transform: translateY(-5px);
+  border-color: rgba(245, 200, 106, 0.36);
+  box-shadow: 0 28px 70px rgba(0, 0, 0, 0.32);
+}
+
+.posterWrap {
+  position: relative;
+  aspect-ratio: 2 / 3;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at top, rgba(245, 200, 106, 0.16), transparent 42%),
+    rgba(255, 255, 255, 0.06);
+}
+
+.poster {
+  transition: transform 220ms ease;
+}
+
+.card:hover .poster {
+  transform: scale(1.04);
+}
+
+.posterOverlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 12px;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.38), transparent 45%);
+  pointer-events: none;
+}
+
+.badge {
+  display: inline-flex;
+  min-height: 28px;
+  align-items: center;
+  padding: 0 10px;
+  border-radius: 999px;
+  background: rgba(245, 200, 106, 0.92);
+  color: #17131b;
+  font-size: 0.72rem;
+  font-weight: 950;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
 }
 
 .info {
-    text-align: center;
+  display: grid;
+  gap: 10px;
+  padding: 16px;
 }
 
 .title {
-    font-size: 1.2rem;
-    font-weight: bold;
-    color: #333;
-    margin: 5px 0;
+  margin: 0;
+  color: #ffffff;
+  font-size: 1.02rem;
+  line-height: 1.25;
+  letter-spacing: -0.03em;
 }
 
-.details {
-    font-size: 0.9rem;
-    color: #666;
-    margin: 3px 0;
+.meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
 }
 
-.link {
-    color: #007bff;
-    text-decoration: none;
-    font-weight: bold;
+.metaItem {
+  display: inline-flex;
+  min-height: 28px;
+  align-items: center;
+  padding: 0 10px;
+  border-radius: 999px;
+  background: rgba(245, 200, 106, 0.12);
+  color: #f5c86a;
+  font-size: 0.82rem;
+  font-weight: 800;
 }
 
-.link:hover {
-    text-decoration: underline;
-    color: #0056b3;
+.noRating {
+  margin: 0;
+  color: rgba(247, 241, 232, 0.52);
+  font-size: 0.86rem;
 }
